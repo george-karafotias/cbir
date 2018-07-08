@@ -1,0 +1,93 @@
+﻿<Window x:Class="CBIR.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CBIR - Similar images" Height="600" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="ItemTemplate">
+            <Border Width="185" Height="185" BorderThickness="1" BorderBrush="Gray">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Grid.Column="0" Stretch="Fill" Source="{Binding FullPath}"/>
+                    <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,5">
+                        <TextBlock Margin="0,0,10,0">Score: </TextBlock>
+                        <TextBlock Text="{Binding Score, StringFormat=N2}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Top">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">Input image:</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">Images directory:</TextBlock>
+                    
+                    <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top">
+                        <TextBox Name="InputImageLocation" Width="120" VerticalContentAlignment="Center" IsReadOnly="True"></TextBox>
+                        <Button Content="Open" Click="OpenInputImageButton_Click"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top">
+                        <TextBox Name="ImagesDirectory" Width="120" VerticalContentAlignment="Center" IsReadOnly="True"></TextBox>
+                        <Button Content="Open" Click="OpenImagesDirectory_Click"/>
+                    </StackPanel>
+                    
+                    <Button Name="CompareButton" Grid.Row="2" Grid.Column="0" Content="Compare" Click="CompareButton_Click" />
+                </Grid>
+            </Grid>
+            
+            <Image Name="InputImage" Grid.Row="0" Grid.Column="1" Margin="10" VerticalAlignment="Top"></Image>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="Gray">
+                <TextBlock VerticalAlignment="Center" Foreground="White" FontWeight="Bold" Margin="20,0,0,0">SIMILAR IMAGES</TextBlock>
+            </Grid>
+            <ListView Grid.Row="1" Name="SimilarImagesListView"
+              ItemTemplate="{StaticResource ItemTemplate}"
+              ItemsSource="{Binding Path=imageList}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="4" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            </ListView>
+        </Grid>
+        
+        <DockPanel Grid.Row="2">
+           <StatusBar DockPanel.Dock="Bottom">
+                <StatusBarItem>
+                    <TextBlock Name="StatusBarText" />
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>

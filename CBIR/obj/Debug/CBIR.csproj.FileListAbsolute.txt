@@ -1,0 +1,12 @@
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\bin\Debug\CBIR.exe
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\bin\Debug\CBIR.pdb
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\obj\Debug\CBIR.csprojResolveAssemblyReference.cache
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\obj\Debug\MainWindow.baml
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\obj\Debug\MainWindow.g.cs
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\obj\Debug\App.g.cs
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\obj\Debug\CBIR_MarkupCompile.cache
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\obj\Debug\CBIR.g.resources
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\obj\Debug\CBIR.Properties.Resources.resources
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\obj\Debug\CBIR.csproj.GenerateResource.Cache
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\obj\Debug\CBIR.exe
+C:\Users\GK250151\Documents\Visual Studio 2013\Projects\CBIR\CBIR\obj\Debug\CBIR.pdb
